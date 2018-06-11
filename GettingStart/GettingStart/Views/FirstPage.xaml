@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             xmlns:local="clr-namespace:GettingStart.CustomControls;assembly=GettingStart"
+             x:Class="GettingStart.Views.FirstPage">
+  <ContentPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness">
+      <On Platform="iOS" Value="0,20,0,0" />
+      <On Platform="Android, UWP" Value="0" />
+    </OnPlatform>
+  </ContentPage.Padding>
+  <ContentPage.Content>
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="*"/>
+      </Grid.RowDefinitions>
+      <Label Text="Test app" HorizontalTextAlignment="Center" />
+      <local:CustomListView Grid.Row="1" x:Name="customListView" ItemSelected="OnItemSelected" VerticalOptions="FillAndExpand" />
+    </Grid>
+  </ContentPage.Content>
+  <!--<StackLayout VerticalOptions="CenterAndExpand">
+    <Entry Text="{Binding TestText}" />
+    <Button Text="Test Button" Command="{Binding TestCommand}"/>
+  </StackLayout>-->
+</ContentPage>
